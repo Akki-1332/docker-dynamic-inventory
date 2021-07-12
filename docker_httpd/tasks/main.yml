@@ -1,0 +1,13 @@
+  - name: "Installing httpd server"
+    package:
+            name: "httpd"
+            state: present
+
+
+  - name: "copy data into the file"
+    copy:
+            dest: "/var/www/html/index.html"
+            content: "<b>Hey Guys, <hr><br>If you are reading this massage then webserver is configured successfully.<hr></b>"
+
+  - name: "Start httpd service"
+    command: "/usr/sbin/httpd"
